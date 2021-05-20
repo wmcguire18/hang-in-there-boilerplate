@@ -13,9 +13,9 @@ var savedPosterView = document.querySelector(".saved-posters");
 var showMain = document.querySelector(".show-main");
 var backToMain = document.querySelector(".back-to-main");
 var makePoster = document.querySelector(".make-poster");
-var posterImageInput = document.querySelector("poster-image-url");
-var posterTitleInput = document.querySelector("poster-title");
-var posterQuoteInput = document.querySelector("poster-quote");
+var posterImageInput = document.querySelector("#poster-image-url");
+var posterTitleInput = document.querySelector("#poster-title");
+var posterQuoteInput = document.querySelector("#poster-quote");
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -157,6 +157,7 @@ function viewHome() {
   showSaved.classList.remove("hidden");
   posterForm.classList.add("hidden");
   savedPosterView.classList.add("hidden");
+  console.log(posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
 
 };
 
@@ -169,9 +170,32 @@ function viewSaved() {
   savePoster.classList.add("hidden");
   showSaved.classList.add("hidden");
   savedPosterView.classList.remove("hidden");
-}
-function createPoster() {
-  images.push(posterImageInput.innerHTML);
-  console.log(images);
-  
-}
+};
+
+function makeNewPoster(poster){
+posterTitle.innerText = poster.title;
+posterImage.src = poster.imageURL;
+posterQuote.innerText = poster.quote;
+console.log(poster, posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
+};
+
+function createPoster(e) {
+e.preventDefault();
+var savedUserPoster = new Poster(
+    posterImageInput.value,
+    posterTitleInput.value,
+    posterQuoteInput.value,
+  );
+images.push(savedUserPoster.imageURL);
+titles.push(savedUserPoster.title);
+quotes.push(savedUserPoster.quote);
+savedPosters.push(savedUserPoster);
+makeNewPoster(savedUserPoster);
+viewHome();
+};
+
+// Objectives:
+// 1. Transfer input data to respective arrays. X
+// 2. Use input data to create a new Poster X
+// 3. Change back to main view X
+// 4. In Main View, new poster is displayed.
