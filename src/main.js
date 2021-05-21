@@ -190,7 +190,20 @@ function createPoster(e) {
 };
 
 // Objectives:
-// 1. Transfer input data to respective arrays. X
-// 2. Use input data to create a new Poster X
-// 3. Change back to main view X
-// 4. In Main View, new poster is displayed.
+// 1. When click SAve Poster Button, current poster pushed to savedPosters array
+//  - create eventListener for the SavePosterButton with click
+//  - create function for addEventListener
+//  - within function, capture current poster
+//  - within function, push poster to savedPoters array
+// 2. Will only save poster once
+// - use array.includes method to see if poster exists in savedPosters array
+// - create if statement to check if poster is saved in array
+//   - yes: do not save
+//   - no: save
+// 3. When click Show Saved Poster Button, user sees saved posters section
+//  - Show saved poster button takes us to empty saved posters page X
+// 4. Need saved posters to appear on the saved posters grid section
+//  - create saved posters grid variable
+//  - iterate over all saved posters (for-loop)
+//  - create html element for each poster
+//  - inject each html element into the grid
