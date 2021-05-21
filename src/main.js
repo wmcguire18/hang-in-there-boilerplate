@@ -156,11 +156,9 @@ function viewHome() {
   showSaved.classList.remove("hidden");
   posterForm.classList.add("hidden");
   savedPosterView.classList.add("hidden");
-  console.log(posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
 };
 
 function viewSaved() {
-  console.log(savedPosters);
   mainPoster.classList.add("hidden");
   poster.classList.add("hidden");
   showRandomButton.classList.add("hidden");
@@ -174,7 +172,6 @@ function makeNewPoster(poster) {
   posterTitle.innerText = poster.title;
   posterImage.src = poster.imageURL;
   posterQuote.innerText = poster.quote;
-console.log(poster, posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
 };
 
 function createPoster(e) {
