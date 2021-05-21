@@ -125,6 +125,8 @@ showSaved.addEventListener("click", viewSaved);
 showMain.addEventListener("click", viewHome);
 backToMain.addEventListener("click", viewHome);
 makePoster.addEventListener("click", createPoster);
+savePoster.addEventListener("click", savePoster);
+
 // functions and event handlers go here 👇
 
 function randomizePoster() {
@@ -189,12 +191,20 @@ function createPoster(e) {
   viewHome();
 };
 
+function savePoster() {
+  currentPoster = new Poster(
+    posterTitle.innerHTML,
+    posterImage.src,
+    posterQuote.innerHTML,
+  );
+  savedPosters.push(currentPoster);
+};
 // Objectives:
 // 1. When click SAve Poster Button, current poster pushed to savedPosters array
-//  - create eventListener for the SavePosterButton with click
-//  - create function for addEventListener
-//  - within function, capture current poster
-//  - within function, push poster to savedPoters array
+//  - create eventListener for the SavePosterButton with click X
+//  - create function for addEventListener X
+//  - within function, capture current poster X
+//  - within function, push poster to savedPoters array X
 // 2. Will only save poster once
 // - use array.includes method to see if poster exists in savedPosters array
 // - create if statement to check if poster is saved in array
@@ -206,4 +216,4 @@ function createPoster(e) {
 //  - create saved posters grid variable
 //  - iterate over all saved posters (for-loop)
 //  - create html element for each poster
-//  - inject each html element into the grid
+//  - inject each html element into the grid (**this will involve using HTML code in JS -- ref CSS for styling clues)
