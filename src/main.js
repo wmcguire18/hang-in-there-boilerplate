@@ -145,7 +145,6 @@ function viewForm() {
   savePoster.classList.add("hidden");
   showSaved.classList.add("hidden");
   posterForm.classList.remove("hidden");
-
 };
 
 function viewHome() {
@@ -158,7 +157,6 @@ function viewHome() {
   posterForm.classList.add("hidden");
   savedPosterView.classList.add("hidden");
   console.log(posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
-
 };
 
 function viewSaved() {
@@ -172,26 +170,26 @@ function viewSaved() {
   savedPosterView.classList.remove("hidden");
 };
 
-function makeNewPoster(poster){
-posterTitle.innerText = poster.title;
-posterImage.src = poster.imageURL;
-posterQuote.innerText = poster.quote;
+function makeNewPoster(poster) {
+  posterTitle.innerText = poster.title;
+  posterImage.src = poster.imageURL;
+  posterQuote.innerText = poster.quote;
 console.log(poster, posterTitleInput.innerText, posterImageInput.src, posterQuoteInput.innerText);
 };
 
 function createPoster(e) {
-e.preventDefault();
-var savedUserPoster = new Poster(
+  e.preventDefault();
+  var savedUserPoster = new Poster(
     posterImageInput.value,
     posterTitleInput.value,
     posterQuoteInput.value,
   );
-images.push(savedUserPoster.imageURL);
-titles.push(savedUserPoster.title);
-quotes.push(savedUserPoster.quote);
-savedPosters.push(savedUserPoster);
-makeNewPoster(savedUserPoster);
-viewHome();
+  images.push(savedUserPoster.imageURL);
+  titles.push(savedUserPoster.title);
+  quotes.push(savedUserPoster.quote);
+  savedPosters.push(savedUserPoster);
+  makeNewPoster(savedUserPoster);
+  viewHome();
 };
 
 // Objectives:
