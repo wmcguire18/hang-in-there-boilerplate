@@ -125,7 +125,7 @@ showSaved.addEventListener("click", viewSaved);
 showMain.addEventListener("click", viewHome);
 backToMain.addEventListener("click", viewHome);
 makePoster.addEventListener("click", createPoster);
-savePoster.addEventListener("click", savePoster);
+savePoster.addEventListener("click", saveUserPoster);
 
 // functions and event handlers go here 👇
 
@@ -191,13 +191,18 @@ function createPoster(e) {
   viewHome();
 };
 
-function savePoster() {
+function saveUserPoster(e) {
+  e.preventDefault();
   currentPoster = new Poster(
-    posterTitle.innerHTML,
-    posterImage.src,
-    posterQuote.innerHTML,
+    this.imageURL = posterImage.src,
+    this.title = posterTitle.innerText,
+    this.quote = posterQuote.innerText
   );
-  savedPosters.push(currentPoster);
+  if (!savedPosters.includes(currentPoster)) {
+    savedPosters.push(currentPoster)
+  }
+  console.log(savedPosters);
+  console.log(currentPoster);
 };
 // Objectives:
 // 1. When click SAve Poster Button, current poster pushed to savedPosters array
@@ -206,10 +211,10 @@ function savePoster() {
 //  - within function, capture current poster X
 //  - within function, push poster to savedPoters array X
 // 2. Will only save poster once
-// - use array.includes method to see if poster exists in savedPosters array
-// - create if statement to check if poster is saved in array
-//   - yes: do not save
-//   - no: save
+// - use array.includes method to see if poster exists in savedPosters array X
+// - create if statement to check if poster is saved in array X
+//   - yes: do not save X
+//   - no: save X
 // 3. When click Show Saved Poster Button, user sees saved posters section
 //  - Show saved poster button takes us to empty saved posters page X
 // 4. Need saved posters to appear on the saved posters grid section
