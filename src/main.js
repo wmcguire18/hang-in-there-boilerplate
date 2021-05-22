@@ -16,6 +16,8 @@ var makePoster = document.querySelector(".make-poster");
 var posterImageInput = document.querySelector("#poster-image-url");
 var posterTitleInput = document.querySelector("#poster-title");
 var posterQuoteInput = document.querySelector("#poster-quote");
+var savedPostersGrid = document.querySelector(".saved-posters-grid");
+
 // we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
@@ -122,6 +124,7 @@ window.addEventListener("load", randomizePoster);
 showRandomButton.addEventListener("click", randomizePoster);
 makeYourOwnButton.addEventListener("click", viewForm);
 showSaved.addEventListener("click", viewSaved);
+showSaved.addEventListener("click", displaySavedPosters);
 showMain.addEventListener("click", viewHome);
 backToMain.addEventListener("click", viewHome);
 makePoster.addEventListener("click", createPoster);
@@ -201,9 +204,13 @@ function saveUserPoster(e) {
   if (!savedPosters.includes(currentPoster)) {
     savedPosters.push(currentPoster)
   }
-  console.log(savedPosters);
-  console.log(currentPoster);
 };
+
+function displaySavedPosters() {
+  for (var i =  0; i < savedPosters.length; i++) {
+
+  }
+}
 // Objectives:
 // 1. When click SAve Poster Button, current poster pushed to savedPosters array
 //  - create eventListener for the SavePosterButton with click X
@@ -215,10 +222,10 @@ function saveUserPoster(e) {
 // - create if statement to check if poster is saved in array X
 //   - yes: do not save X
 //   - no: save X
-// 3. When click Show Saved Poster Button, user sees saved posters section
+// 3. When click Show Saved Poster Button, user sees saved posters section X
 //  - Show saved poster button takes us to empty saved posters page X
 // 4. Need saved posters to appear on the saved posters grid section
-//  - create saved posters grid variable
-//  - iterate over all saved posters (for-loop)
+//  - create saved posters grid variable X
+//  - iterate over all saved posters (for-loop) --- saved posters array
 //  - create html element for each poster
 //  - inject each html element into the grid (**this will involve using HTML code in JS -- ref CSS for styling clues)
