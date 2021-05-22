@@ -207,10 +207,16 @@ function saveUserPoster(e) {
 };
 
 function displaySavedPosters() {
-  for (var i =  0; i < savedPosters.length; i++) {
-
+for (var i =  0; i < savedPosters.length; i++) {
+  savedPostersGrid.innerHTML += `
+    <div class="mini-poster">
+    <img src="${savedPosters[i].imageURL}">
+    <h2>${savedPosters[i].title}</h2>
+    <h4>${savedPosters[i].quote}</h4>
+    </div>
+  `
   }
-}
+};
 // Objectives:
 // 1. When click SAve Poster Button, current poster pushed to savedPosters array
 //  - create eventListener for the SavePosterButton with click X
