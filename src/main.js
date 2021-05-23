@@ -1,4 +1,3 @@
-// query selector variables go here 👇
 var poster = document.querySelector(".poster");
 var mainPoster = document.querySelector(".main-poster");
 var posterImage = document.querySelector(".poster-img");
@@ -18,8 +17,6 @@ var posterTitleInput = document.querySelector("#poster-title");
 var posterQuoteInput = document.querySelector("#poster-quote");
 var savedPostersGrid = document.querySelector(".saved-posters-grid");
 
-
-// we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
@@ -120,7 +117,6 @@ var quotes = [
 var savedPosters = [];
 var currentPoster;
 
-// event listeners go here 👇
 window.addEventListener("load", randomizePoster);
 showRandomButton.addEventListener("click", randomizePoster);
 makeYourOwnButton.addEventListener("click", viewForm);
@@ -130,9 +126,6 @@ showMain.addEventListener("click", viewHome);
 backToMain.addEventListener("click", viewHome);
 makePoster.addEventListener("click", createPoster);
 savePoster.addEventListener("click", saveUserPoster);
-
-
-// functions and event handlers go here 👇
 
 function randomizePoster() {
   posterTitle.innerHTML = titles[getRandomIndex(titles)];
@@ -225,8 +218,4 @@ function remove(elem) {
   element.remove();
 };
 
-// Objectives:
-// 1. From saved posters page, if user double clicks, poster will be deleted
-//- create double click event listener that removes specific saved poster
-//- need to access the saved posters
-//parameter in function
+
