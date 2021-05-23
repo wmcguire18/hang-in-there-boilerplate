@@ -202,13 +202,20 @@ function saveUserPoster(e) {
 };
 
 function displaySavedPosters() {
-for (var i =  0; i < savedPosters.length; i++) {
-  savedPostersGrid.innerHTML += `
-    <div class="mini-poster">
-    <img src="${savedPosters[i].imageURL}">
-    <h2>${savedPosters[i].title}</h2>
-    <h4>${savedPosters[i].quote}</h4>
-    </div>
-  `
-  }
+  for (var i =  0; i < savedPosters.length; i++) {
+    savedPostersGrid.innerHTML += `
+      <div class="mini-poster" ondblclick="remove(this)">
+        <img src="${savedPosters[i].imageURL}"/>
+        <h2>${savedPosters[i].title}</h2>
+        <h4>${savedPosters[i].quote}</h4>
+      </div>
+    `
+  };
 };
+
+function remove(elem) {
+  var element = elem;
+  element.remove();
+};
+
+
