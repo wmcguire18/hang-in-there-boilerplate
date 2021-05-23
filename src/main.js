@@ -1,4 +1,3 @@
-// query selector variables go here 👇
 var poster = document.querySelector(".poster");
 var mainPoster = document.querySelector(".main-poster");
 var posterImage = document.querySelector(".poster-img");
@@ -18,7 +17,6 @@ var posterTitleInput = document.querySelector("#poster-title");
 var posterQuoteInput = document.querySelector("#poster-quote");
 var savedPostersGrid = document.querySelector(".saved-posters-grid");
 
-// we've provided you with some data to work with 👇
 var images = [
   "./assets/bees.jpg",
   "./assets/bridge.jpg",
@@ -119,7 +117,6 @@ var quotes = [
 var savedPosters = [];
 var currentPoster;
 
-// event listeners go here 👇
 window.addEventListener("load", randomizePoster);
 showRandomButton.addEventListener("click", randomizePoster);
 makeYourOwnButton.addEventListener("click", viewForm);
@@ -129,8 +126,6 @@ showMain.addEventListener("click", viewHome);
 backToMain.addEventListener("click", viewHome);
 makePoster.addEventListener("click", createPoster);
 savePoster.addEventListener("click", saveUserPoster);
-
-// functions and event handlers go here 👇
 
 function randomizePoster() {
   posterTitle.innerHTML = titles[getRandomIndex(titles)];
@@ -217,21 +212,3 @@ for (var i =  0; i < savedPosters.length; i++) {
   `
   }
 };
-// Objectives:
-// 1. When click SAve Poster Button, current poster pushed to savedPosters array
-//  - create eventListener for the SavePosterButton with click X
-//  - create function for addEventListener X
-//  - within function, capture current poster X
-//  - within function, push poster to savedPoters array X
-// 2. Will only save poster once
-// - use array.includes method to see if poster exists in savedPosters array X
-// - create if statement to check if poster is saved in array X
-//   - yes: do not save X
-//   - no: save X
-// 3. When click Show Saved Poster Button, user sees saved posters section X
-//  - Show saved poster button takes us to empty saved posters page X
-// 4. Need saved posters to appear on the saved posters grid section
-//  - create saved posters grid variable X
-//  - iterate over all saved posters (for-loop) --- saved posters array
-//  - create html element for each poster
-//  - inject each html element into the grid (**this will involve using HTML code in JS -- ref CSS for styling clues)
